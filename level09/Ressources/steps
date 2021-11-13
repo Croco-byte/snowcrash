@@ -1,0 +1,4 @@
+[host]
+python3 decrypt.py
+su flag09
+getflag

